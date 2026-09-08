@@ -1,5 +1,8 @@
 package-as: WhisperTrigger
 
+plain-copy:
+  - Libs
+
 ignore:
   - .pkgmeta
   - .gitignore
