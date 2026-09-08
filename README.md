@@ -85,4 +85,21 @@ luac -p Core.lua BroodWindow.lua EditMode.lua Interrupts.lua tests/brood-window.
 
 The regression scenarios exercise encounter scope, boss-mod callbacks, timing boundaries, pause/resume, cancellation, overlapping windows, layout persistence, and cleanup using WoW API stand-ins. They do not replace in-game testing of rendering, audio output, or a live encounter.
 
+## Releases
+
+Releases are built by [the Release workflow](https://github.com/MathWro-WoW/WhisperTrigger/actions/workflows/release.yml), using `BigWigsMods/packager@v2`.
+
+After committing, pushing, and validating the changes, create and push an annotated version tag:
+
+```sh
+git tag -a v1.0.0 -m "v1.0.0"
+git push origin v1.0.0
+```
+
+Use the next unused semantic version for subsequent releases. The workflow runs the Lua checks, substitutes the tag version into the TOC, and publishes an installable ZIP to GitHub Releases. The package includes bundled libraries and their licenses, but excludes tests and repository automation files.
+
+The workflow can also be run manually with an existing tag. Download the `WhisperTrigger-*.zip` release asset for installation, not GitHub's automatically generated source archives.
+
+**CurseForge publishing is disabled.** Its project-ID argument and API-key environment variable are commented out in the workflow. To enable it later, set the `CURSEFORGE_PROJECT_ID` repository variable and `CF_API_KEY` repository secret, then enable the commented argument and environment variable. No CurseForge credentials are required for GitHub releases.
+
 Bundled libraries retain their own licenses and copyright notices under `Libs/`.

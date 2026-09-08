@@ -1,0 +1,7 @@
+package-as: WhisperTrigger
+
+ignore:
+  - .pkgmeta
+  - .gitignore
+  - .github
+  - tests
