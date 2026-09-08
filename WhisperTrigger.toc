@@ -1,0 +1,18 @@
+## Interface: 120100
+## Title: WhisperTrigger
+## Notes: Whisper kick reminders around Rouse the Brood on Mythic Twin Fangs, using BigWigs or DBM timers. Configure in Edit Mode; /wt test bypasses restrictions.
+## Author: WhisperTrigger
+## Version: 1.0.0
+## SavedVariables: WhisperTriggerDB
+## LoadSavedVariablesFirst: 1
+## OptionalDeps: LibCustomGlow-1.0, Masque, BigWigs, DBM-Core
+
+Libs\LibStub\LibStub.lua
+Libs\LibCustomGlow-1.0\LibCustomGlow-1.0.lua
+Libs\LibEditMode\namespaced.lua
+Libs\LibEditMode\embed.xml
+
+Interrupts.lua
+BroodWindow.lua
+Core.lua
+EditMode.lua
